@@ -35,8 +35,8 @@ I'm a passionate Data Engineer and aspiring Cloud Engineer with a strong backgro
 
 ## 🤝 Let's Connect
 
+- [Email](mailto:igbajiobande@outlook.com)
 - [Email](mailto:barnabasobande2010@gmail.com)
-- [Whatsapp](wa.me/+2349020004790)
 
 
 
