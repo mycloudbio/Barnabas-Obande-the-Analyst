@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/HP/OneDrive/Desktop/Dimplat_Tech/SQL MODULE/SQL Class.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1329"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainFastsoft"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="DIMPLAT" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="59"/><column index="3" value="105"/><column index="4" value="41"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Fastsoft" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="121"/><column index="3" value="105"/><column index="4" value="41"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HOUSE DETAIL" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="70"/><column index="2" value="60"/><column index="3" value="62"/><column index="4" value="80"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Indigo_cosmetics" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="121"/><column index="3" value="105"/><column index="4" value="173"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="brands" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="65"/><column index="2" value="89"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="categories" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="86"/><column index="2" value="115"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="customers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="88"/><column index="2" value="78"/><column index="3" value="76"/><column index="4" value="96"/><column index="5" value="209"/><column index="6" value="187"/><column index="7" value="139"/><column index="8" value="43"/><column index="9" value="65"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="order_items" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="55"/><column index="3" value="78"/><column index="4" value="63"/><column index="5" value="67"/><column index="6" value="63"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="orders" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="88"/><column index="3" value="94"/><column index="4" value="82"/><column index="5" value="101"/><column index="6" value="96"/><column index="7" value="62"/><column index="8" value="58"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="300"/><column index="3" value="65"/><column index="4" value="86"/><column index="5" value="84"/><column index="6" value="67"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- Simple SQL QUERY
+-- SELECT AND FROM
+-- Where Clause (displays info with states having NY)
+SELECT *
+FROM customers c
+
+
+SELECT c.first_name, c.last_name, c.state, c.customer_id
+FROM customers c
+--WHERE state = &quot;NY&quot;
+WHERE c.customer_id = 100</sql><sql name="SQL 2">-- Sorting Data: Use ORDER BY to sort data both Ascending and 
+-- Descending ORDER
+-- Putting a LIMIT
+
+SELECT *
+FROM order_items
+WHERE discount &gt; 0.05
+ORDER BY list_price DESC
+LIMIT 10
+
+
+SELECT *
+FROM order_items
+ORDER BY list_price DESC
+LIMIT 50</sql><sql name="SQL 4">-- Aggregate Functions:
+-- Grouping Data:
+
+SELECT product_id, 
+sum(quantity) as total_quantity, 
+avg(discount) as average_discount
+FROM order_items
+GROUP BY product_id
+ORDER BY total_quantity DESC.
+
+
+SELECT product_name, product_id, COUNT(DISTINCT product_id)
+FROM products
+WHERE product_id IN (20, 16)
+GROUP BY product_id
+HAVING COUNT(DISTINCT product_id)
+
+
+
+
+SELECT order_id, sum(quantity) as total_quantity,
+sum(discount) as totalDiscount,
+avg(list_price) as averageDiscount
+FROM order_items
+GROUP BY order_id
+ORDER BY quantity
+</sql><sql name="SQL 5">-- Use COUNT, Min, MAX, 
+
+SELECT product_id,
+quantity,
+min(list_price)
+FROM order_items
+
+
+
+SELECT *,
+count(quantity)
+FROM order_items
+GROUP BY item_id
+
+
+SELECT product_id,
+quantity,
+min(list_price)
+FROM order_items
+
+
+
+
+SELECT count(*)
+FROM order_items
+
+
+SELECT product_id,
+quantity,
+max(list_price)
+FROM order_items
+WHERE product_id = 10 AND quantity = 1</sql><sql name="SQL 6">-- TABLE Manipilation:
+
+-- CREATING TABLE
+-- ADDING VALUES TO TABLES (USING INSERT)
+-- UPDATE TABLE
+-- DELETE Record
+
+
+CREATE TABLE &quot;Fastsoft&quot; (
+	&quot;product_id&quot;	INTEGER NOT NULL UNIQUE,
+	&quot;product&quot;	TEXT NOT NULL,
+	&quot;phone_number&quot;	VARCHAR(50) NOT NULL,
+	&quot;email&quot;	VARCHAR(50) NOT NULL,
+	PRIMARY KEY(&quot;product_id&quot; AUTOINCREMENT)
+);
+
+-- ADDING VALUES TO TABLES (USING INSERT)
+INSERT INTO &quot;Indigo_cosmetics&quot; (product_id, product, phone_number, email)
+VALUES 
+(07, 'Johnson Baby Soap', 09051234567, 'alice.johnson@example.com'),
+(08, 'Smith Cream', 08102345678, 'bob.smith@example.com'),
+(01, &quot;Oath Meal Bar Soap&quot;, 08021454190, &quot;oat@gmail.com&quot;),
+(02, &quot;Vit_C Face Wash&quot;, 08021678190, &quot;vit@gmail.com&quot;),
+(03, &quot;Black Soap&quot;, 08021453567, &quot;black@gmail.com&quot;),
+(09, 'Brown Soap', 08034516789, 'charlie.brown@example.com');
+
+
+SELECT * FROM Fastsoft
+
+INSERT INTO &quot;Fastsoft&quot; (product_id, product, phone_number, email)
+VALUES (07, &quot;crypto&quot;, 09051234567, 'crypto@example.com'),
+(08, 'Smith Cream', 08102345678, 'bob.smith@example.com'),
+(04, &quot;Oath Meal Bar Soap&quot;, 08021454190, &quot;oat@gmail.com&quot;),
+(06, &quot;Vit_C Face Wash&quot;, 08021678190, &quot;vit@gmail.com&quot;),
+(05, &quot;Black Soap&quot;, 08021453567, &quot;black@gmail.com&quot;),
+(09, 'Brown Soap', 08034516789, 'charlie.brown@example.com');
+
+
+
+-- UPDATE TABLE
+
+UPDATE Fastsoft
+SET product = &quot;e_pay&quot;
+WHERE product = &quot;Smith Cream&quot;
+
+SELECT * FROM Fastsoft
+
+
+-- DELETE Record
+
+ALTER TABLE Fastsoft
+DROP COLUMN email
+
+-- ADD Records
+ALTER TABLE Fastsoft
+ADD COLUMN &quot;email&quot;</sql><sql name="SQL 7">-- JOIN
+-- This is the combination of two or more TABLES
+-- Types of JOIN:
+-- 1)	INNER
+-- 2)	LEFT JOIN
+-- 3)	RIGHT JOIN
+-- 4)	FULL JOIN
+--PRIMARY KEY - UNIQUE Identifer
+
+SELECT orders.order_id, order_items.item_id
+FROM orders -- LEFT TABLE
+JOIN order_items --RIGHT TABLE
+ON orders.order_id = order_items.order_id
+
+
+SELECT o.order_id, i.item_id
+FROM orders o -- LEFT TABLE
+JOIN order_items i --RIGHT TABLE
+ON o.order_id = i.order_id
+
+
+
+SELECT *
+FROM orders
+
+
+SELECT *
+FROM order_items
+
+
+SELECT *
+FROM orders o
+JOIN order_items i
+ON o.order_id = i.order_id
+GROUP BY i.order_id
+
+SELECT *
+FROM order_items i
+JOIN products p
+ON p.product_id = i.product_id
+GROUP BY i.order_id</sql><sql name="SQL 8">-- SubQuery (INNER QUERY): This is just a QUERY inside another QUERY
+-- It can be used to fetch data FROM two TABLES
+
+SELECT p.product_name, i.product_id, p.list_price
+FROM (SELECT * FROM order_items WHERE order_id = 1) as i
+JOIN products as p
+ON i.product_id = p.product_id
+
+
+SELECT p.product_name, i.product_id, p.list_price
+FROM (SELECT * FROM order_items WHERE order_id = 1) i
+JOIN products p
+ON i.product_id = p.product_id
+
+
+</sql><sql name="SQL 9">-- CTE (Common Table Expression)
+-- CTEs are used to simplify complex queries by breaking 
+-- them down into smaller, more manageable parts. 
+-- They can also be recursive (recurrence or repetition).
+
+-- Example - CTE:
+--A CTE to find the top 5 customers by total spending:
+
+WITH CustomerSpending AS (
+    SELECT customers.customer_id, customers.first_name, customers.last_name, SUM(order_items.list_price * order_items.quantity) AS total_spent
+    FROM customers
+    JOIN orders ON customers.customer_id = orders.customer_id
+    JOIN order_items ON orders.order_id = order_items.order_id
+    GROUP BY customers.customer_id
+)
+SELECT *
+FROM CustomerSpending
+ORDER BY total_spent DESC
+LIMIT 5;
+
+
+WITH customer_spending AS
+			(SELECT c.customer_id, c.first_name, c.last_name,
+			sum(i.list_price * i.quantity) as total_spent
+			FROM customers c
+			JOIN orders o
+			ON c.customer_id = o.customer_id
+			JOIN order_items i
+			ON o.order_id = i.order_id
+			GROUP BY c.customer_id)
+SELECT *
+FROM customer_spending
+ORDER BY total_spent DESC
+LIMIT 5;
+
+
+
+--A CTE to find the top 5 customers by total spending:
+WITH customer_spending AS
+(SELECT c.customer_id, c.first_name, c.last_name, 
+sum(i.list_price * i.quantity) as total_spent
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items i ON o.order_id = i.order_id
+GROUP BY o.order_id
+)
+SELECT *
+FROM customer_spending
+ORDER BY total_spent DESC
+LIMIT 5
+
+
+</sql><sql name="SQL 10">SELECT *
+FROM orders
+
+SELECT *
+FROM order_items</sql><sql name="SQL 11">--Project Tab
+-- 1.	Find the top 3 customers who have spent the most on orders.
+
+SELECT customers.customer_id, customers.first_name, customers.last_name, 
+SUM(order_items.list_price * order_items.quantity) as total_spent
+FROM customers
+JOIN orders ON customers.customer_id = orders.customer_id
+JOIN order_items ON orders.order_id = order_items.order_id
+GROUP BY customers.customer_id
+ORDER BY total_spent DESC
+LIMIT 3;
+</sql><sql name="SQL 12">-- 2.	List the products that have never been ordered.
+
+
+SELECT product_id, product_name
+FROM products
+WHERE product_id NOT IN (SELECT product_id FROM order_items);
+</sql><sql name="SQL 13">-- 3.	Determine the monthly sales revenue for the year 2016.
+
+SELECT 
+    strftime('%Y-%m', order_date) AS month,
+    SUM(order_items.list_price * order_items.quantity) AS monthly_revenue
+FROM 
+    orders
+JOIN 
+    order_items ON orders.order_id = order_items.order_id
+WHERE 
+    strftime('%Y', order_date) = '2016'
+GROUP BY 
+    strftime('%Y-%m', order_date)
+ORDER BY 
+    month;
+
+</sql><sql name="SQL 14">-- 4.	Identify the staff member who has handled the most orders.
+
+SELECT staff_id, COUNT(order_id) as order_count
+FROM orders
+GROUP BY staff_id
+ORDER BY order_count DESC
+LIMIT 1;
+</sql><sql name="SQL 15">-- 5.	Calculate the average number of items per order for each customer.
+
+SELECT customers.customer_id, customers.first_name, customers.last_name, 
+AVG(order_item_count.item_count) as avg_items_per_order
+FROM customers
+JOIN (
+    SELECT orders.customer_id, orders.order_id, COUNT(order_items.item_id) as item_count
+    FROM orders
+    JOIN order_items ON orders.order_id = order_items.order_id
+    GROUP BY orders.customer_id, orders.order_id
+) as order_item_count ON customers.customer_id = order_item_count.customer_id
+GROUP BY customers.customer_id;
+</sql><sql name="SQL 16">-- 6.	Find the most frequently ordered product in 2016.
+
+SELECT product_id, COUNT(*) as order_count
+FROM order_items
+JOIN orders ON order_items.order_id = orders.order_id
+WHERE YEAR(orders.order_date) = 2016
+GROUP BY product_id
+ORDER BY order_count DESC
+LIMIT 1;
+</sql><sql name="SQL 17">-- 7.	Determine the total discount given for each product category.
+
+SELECT categories.category_id, categories.category_name, 
+SUM(order_items.discount * order_items.list_price * order_items.quantity) as total_discount
+FROM categories
+JOIN products ON categories.category_id = products.category_id
+JOIN order_items ON products.product_id = order_items.product_id
+GROUP BY categories.category_id, categories.category_name;
+</sql><sql name="SQL 18">-- 8.	Identify the customers who have placed orders in every month of 2016.
+
+SELECT customers.customer_id, customers.first_name, customers.last_name
+FROM customers
+JOIN orders ON customers.customer_id = orders.customer_id
+WHERE YEAR(orders.order_date) = 2016
+GROUP BY customers.customer_id
+HAVING COUNT(DISTINCT DATE_FORMAT(orders.order_date, '%Y-%m')) = 12;
+</sql><current_tab id="16"/></tab_sql></sqlb_project>
