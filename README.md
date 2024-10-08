@@ -20,7 +20,7 @@ I'm a passionate Data Engineer and aspiring Cloud Engineer with a strong backgro
 
 ## 🌟 Featured Projects
 
-- **[Factors Affecting Bike Purchase](https://github.com/mycloudbio/Barnabas-Obande-the-Analyst)**  
+- **[Factors Affecting Bike Purchase](https://github.com/mycloudbio/Barnabas-Obande-the-Analyst/blob/main/Project%20to%20Check%20Factors%20Affecting%20Bike%20Purchase.xlsx)**  
   An Excel-based project analyzing factors affecting bike purchases, with insights derived from data cleaning and visualization techniques.
 
 - **[Sales KPI Dashboard](https://github.com/mycloudbio/Barnabas-Obande-the-Analyst)**  
