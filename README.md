@@ -26,9 +26,6 @@ I'm a passionate Data Engineer and aspiring Cloud Engineer with a strong backgro
 - **[Sales KPI Dashboard](https://github.com/mycloudbio/Barnabas-Obande-the-Analyst/blob/main/Sales%20KPI.pbix)**  
   A Power BI project where I built an interactive dashboard to track key sales performance indicators, improving data visibility for decision-making.
 
-- **[Cloud Resume Project](https://github.com/mycloudbio/Barnabas-Obande-the-Analyst)**  
-  A cloud-based project focused on building and hosting my resume on Azure, integrating CI/CD pipelines and serverless functions.
-
 ## 📊 GitHub Stats
 
 ![Barnabas' GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical)
