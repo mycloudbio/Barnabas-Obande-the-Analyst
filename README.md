@@ -1,6 +1,6 @@
 # Hi there, I'm Igbaji Barnabas Obande! 👋
 
-I'm a passionate Data Engineer and aspiring Cloud Data Engineer with a strong background in data analysis, Python, SQL, and Microsoft Fabric. I love solving complex problems with data and creating insights that drive impactful decisions. Welcome to my GitHub profile!
+I'm a passionate Data Engineer and aspiring Cloud Data Engineer with a strong background in Microsoft Fabric, data analysis, Python, and SQL . I love solving complex problems with data and creating insights that drive impactful decisions. Welcome to my GitHub profile!
 
 ## 🛠️ Skills & Technologies
 
